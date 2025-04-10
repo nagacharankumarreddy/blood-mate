@@ -1,0 +1,12 @@
+.home-container {
+    padding: 40px;
+    text-align: center;
+    color: #333;
+  }
+  
+  @media (max-width: 600px) {
+    .home-container {
+      padding: 20px;
+    }
+  }
+  

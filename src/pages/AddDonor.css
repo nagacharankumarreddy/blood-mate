@@ -1,0 +1,45 @@
+.add-form-container {
+    padding: 30px;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .add-form input,
+  .add-form select {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .add-form button {
+    padding: 10px;
+    background-color: #b11226;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .error {
+    color: red;
+    font-size: 0.85rem;
+    margin: 4px 0 10px 5px;
+  }
+  
+  
+  @media (max-width: 600px) {
+    .add-form-container {
+      padding: 15px;
+    }
+  
+    .add-form input,
+    .add-form select {
+      font-size: 14px;
+    }
+  }
+  
