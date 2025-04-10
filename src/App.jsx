@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
@@ -39,14 +39,12 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/add" element={<AddDonor addDonor={addDonor} />} />
-          <Route path="/donors" element={<Donors donors={donors} />} />
-        </Routes>
-      </Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add" element={<AddDonor addDonor={addDonor} />} />
+        <Route path="/donors" element={<Donors donors={donors} />} />
+      </Routes>
       <ToastContainer position="top-right" autoClose={3000} limit={1} />
     </>
   );
