@@ -10,7 +10,8 @@ import Home from "./pages/Home";
 
 function App() {
   const [donors, setDonors] = useState([]);
-  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+  const apiBaseUrl =
+    import.meta.env.VITE_API_BASE_URL || "http://13.61.24.214:5000";
   console.log("API Base URL:", apiBaseUrl);
   const fetchDonors = async () => {
     try {
