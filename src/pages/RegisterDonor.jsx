@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./AddDonor.css";
+import "./RegisterDonor.css";
 
-const AddDonor = ({ addDonor }) => {
+const RegisterDonor = ({ registerDonor }) => {
   const [formData, setFormData] = useState({
     name: "",
     bloodGroup: "",
@@ -41,13 +41,13 @@ const AddDonor = ({ addDonor }) => {
     e.preventDefault();
     if (!validate()) return;
 
-    addDonor(formData, () => navigate("/donors"));
+    registerDonor(formData, () => navigate("/donors"));
   };
 
   return (
-    <div className="add-form-container">
-      <h2>Add Donor</h2>
-      <form onSubmit={handleSubmit} className="add-form">
+    <div className="register-form-container">
+      <h2>Register as Donor</h2>
+      <form onSubmit={handleSubmit} className="register-form">
         <input
           type="text"
           name="name"
@@ -56,7 +56,6 @@ const AddDonor = ({ addDonor }) => {
           onChange={handleChange}
         />
         {errors.name && <p className="error">{errors.name}</p>}
-
         <select
           name="bloodGroup"
           value={formData.bloodGroup}
@@ -73,7 +72,6 @@ const AddDonor = ({ addDonor }) => {
           <option value="AB-">AB-</option>
         </select>
         {errors.bloodGroup && <p className="error">{errors.bloodGroup}</p>}
-
         <input
           type="text"
           name="location"
@@ -82,7 +80,6 @@ const AddDonor = ({ addDonor }) => {
           onChange={handleChange}
         />
         {errors.location && <p className="error">{errors.location}</p>}
-
         <input
           type="tel"
           name="mobile"
@@ -91,11 +88,10 @@ const AddDonor = ({ addDonor }) => {
           onChange={handleChange}
         />
         {errors.mobile && <p className="error">{errors.mobile}</p>}
-
-        <button type="submit">Add Donor</button>
+        <button type="submit">Register</button> {/* Updated button text */}
       </form>
     </div>
   );
 };
 
-export default AddDonor;
+export default RegisterDonor; // (Optional: updated export too)

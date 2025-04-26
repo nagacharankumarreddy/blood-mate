@@ -4,9 +4,9 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
-import AddDonor from "./pages/AddDonor";
 import Donors from "./pages/Donors";
 import Home from "./pages/Home";
+import RegisterDonor from "./pages/RegisterDonor";
 
 function App() {
   const [donors, setDonors] = useState([]);
@@ -28,7 +28,7 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const addDonor = async (donor, onSuccess) => {
+  const registerDonor = async (donor, onSuccess) => {
     try {
       const res = await axios.post(`${apiBaseUrl}/api/donors`, donor);
       setDonors((prev) => [...prev, res.data]);
@@ -44,7 +44,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/add" element={<AddDonor addDonor={addDonor} />} />
+        <Route
+          path="/register"
+          element={<RegisterDonor registerDonor={registerDonor} />}
+        />
         <Route path="/donors" element={<Donors donors={donors} />} />
       </Routes>
       <ToastContainer position="top-right" autoClose={3000} limit={1} />
