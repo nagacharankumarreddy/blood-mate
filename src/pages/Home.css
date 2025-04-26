@@ -1,12 +1,31 @@
 .home-container {
-    padding: 40px;
-    text-align: center;
-    color: #333;
-  }
-  
-  @media (max-width: 600px) {
-    .home-container {
-      padding: 20px;
-    }
-  }
-  
+  background-image: url("../assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.home-container h1 {
+  padding-left: 30%;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  color: red;
+}
+
+.home-container p {
+  padding-left: 50%;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: red;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}

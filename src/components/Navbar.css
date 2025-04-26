@@ -1,51 +1,57 @@
+/* Make Navbar Fixed at the top */
 .navbar {
-    display: flex;
-    flex-direction: row;
-    background-color: #b11226;
-    padding: 15px 20px;
-    color: white;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .navbar h2 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .navbar-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease, transform 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #b11226;
+  padding: 15px 20px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1000; 
+  margin-bottom: 60px; 
+}
+
+.navbar h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ff6347;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
-  .navbar a:hover {
-    color: #ff6347; 
-    transform: scale(1.05); 
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
   }
-  
-  @media (max-width: 600px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-    }
-  
-    .navbar-links {
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
-    }
-  
-    .navbar a {
-      padding: 8px 0;
-    }
+
+  .navbar a {
+    padding: 8px 0;
   }
-  
+}

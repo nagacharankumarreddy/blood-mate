@@ -3,7 +3,9 @@ import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
 import Navbar from "./components/Navbar";
+import ScrollingBanner from "./components/ScrollingBanner";
 import Donors from "./pages/Donors";
 import Home from "./pages/Home";
 import RegisterDonor from "./pages/RegisterDonor";
@@ -42,6 +44,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <ScrollingBanner />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
