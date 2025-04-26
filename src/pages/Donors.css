@@ -1,105 +1,131 @@
 .donors-container {
-    padding: 2rem 1rem;
-    max-width: 1000px;
-    margin: auto;
-  }
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.donor-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.donor-card {
+  padding: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  min-width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.donor-card-wrapper {
+  width: 100%; 
+  text-align: left; 
+}
+
+.donor-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.donor-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #c0392b;
+  font-size: 1.2rem;
+}
+
+.donor-card p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+}
+
+.mobile-line {
+  display: flex;
+  align-items: center;
+  justify-content:baseline;
+  gap: 10px;
+}
+
+.call-icon {
+  text-decoration: none;
+  margin-left: 8px;
+  font-size: 1.2rem;
+  color: green;
+  transition: transform 0.2s ease;
+}
+
+.call-icon:hover {
+  transform: scale(1.2);
+}
+
+.blood-badge {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.search-input {
+  padding: 0.6rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 2rem;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
   
-  h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
-  }
-  
-  .donor-list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.2rem;
-  }
-  
+
   .donor-card {
-    padding: 1.2rem;
-    border: 1px solid #ccc;
-    border-radius: 12px;
-    background-color: #f9f9f9;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    padding: 1rem;
   }
-  
-  .donor-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    font-size: 1.6rem;
   }
-  
+
   .donor-card h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    color: #c0392b;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
-  
+
   .donor-card p {
-    margin: 0.2rem 0;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
-  .mobile-line {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+}
+
+@media (max-width: 480px) {
+  .donor-card {
+    padding: 0.8rem;
   }
-  
-  .call-icon {
-    text-decoration: none;
-    margin-left: 8px;
-    font-size: 1.2rem;
-    color: green;
-    transition: transform 0.2s ease;
+
+  h2 {
+    font-size: 1.4rem;
   }
-  
-  .call-icon:hover {
-    transform: scale(1.2);
+
+  .donor-card h3 {
+    font-size: 1rem;
   }
-  
-  .blood-badge {
-    display: inline-block;
-    padding: 0.3rem 0.6rem;
-    background-color: #e74c3c;
-    color: white;
-    border-radius: 20px;
-    font-weight: bold;
+
+  .donor-card p {
     font-size: 0.85rem;
   }
-  
-  .search-input {
-    padding: 0.6rem;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto 2rem;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-  
- 
-  
-  
-  /* 🌐 Mobile Friendly Tweaks */
-  @media (max-width: 480px) {
-    .donor-card {
-      padding: 1rem;
-    }
-  
-    h2 {
-      font-size: 1.4rem;
-    }
-  
-    .donor-card h3 {
-      font-size: 1.05rem;
-    }
-  
-    .donor-card p {
-      font-size: 0.9rem;
-    }
-  }
-  
+}
