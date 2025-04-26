@@ -6,15 +6,20 @@ const Donors = ({ donors }) => {
   const [searchText, setSearchText] = useState("");
 
   const filteredDonors = Array.isArray(donors)
-    ? donors.filter((donor) => {
-        const searchWords = searchText.toLowerCase().split(" ").filter(Boolean);
-        const { bloodGroup = "", location = "", name = "" } = donor;
-        const donorFields = [bloodGroup, location, name]
-          .join(" ")
-          .toLowerCase();
+    ? searchText.trim() === ""
+      ? donors
+      : donors.filter((donor) => {
+          const searchWords = searchText
+            .toLowerCase()
+            .split(" ")
+            .filter(Boolean);
+          const { bloodGroup = "", location = "", name = "" } = donor;
+          const donorFields = [bloodGroup, location, name]
+            .join(" ")
+            .toLowerCase();
 
-        return searchWords.some((word) => donorFields.includes(word));
-      })
+          return searchWords.some((word) => donorFields.includes(word));
+        })
     : [];
 
   return (
