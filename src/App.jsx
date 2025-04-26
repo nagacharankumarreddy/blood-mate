@@ -10,8 +10,9 @@ import Home from "./pages/Home";
 
 function App() {
   const [donors, setDonors] = useState([]);
-  const apiBaseUrl =
-    import.meta.env.VITE_API_BASE_URL || "http://13.61.24.214:5000";
+  // AWS Backend URL
+  // const apiBaseUrl = "http://13.61.24.214:5000";
+  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
   console.log("API Base URL:", apiBaseUrl);
   const fetchDonors = async () => {
     try {
