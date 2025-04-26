@@ -44,7 +44,6 @@ function App() {
   return (
     <>
       <Navbar />
-      <ScrollingBanner />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -53,6 +52,7 @@ function App() {
         />
         <Route path="/donors" element={<Donors donors={donors} />} />
       </Routes>
+      <ScrollingBanner />
       <ToastContainer position="top-right" autoClose={3000} limit={1} />
     </>
   );

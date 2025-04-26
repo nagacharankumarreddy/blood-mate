@@ -4,7 +4,7 @@
   white-space: nowrap;
   padding: 0.5rem 0;
   position: fixed;
-  top: 50px;
+  bottom: 0px;
   left: 0;
   right: 0;
   z-index: 1000;

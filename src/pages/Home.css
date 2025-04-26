@@ -5,13 +5,12 @@
   background-repeat: no-repeat;
   color: #ffffff;
   min-height: 100vh;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 .home-container h1 {
@@ -28,4 +27,36 @@
   font-weight: 500;
   color: red;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    background-image: none;
+    background-color: #fff;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .home-container h1,
+  .home-container p {
+    padding-left: 0;
+    color: #b11226;
+    text-align: center;
+  }
+
+  .home-container h1 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .home-container p {
+    font-size: 1.2rem;
+  }
 }
