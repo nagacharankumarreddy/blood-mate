@@ -8,7 +8,7 @@
   padding: 30px;
   max-width: 400px;
   margin: auto;
-  margin-top: 25%;
+  margin-top: 5%;
   background-color: #fff;
 }
 
@@ -53,6 +53,7 @@
 @media (max-width: 600px) {
   .register-form-container {
     padding: 15px;
+    margin-top: 10%;
   }
 
   .register-form input,
@@ -67,10 +68,6 @@
 }
 
 @media (max-width: 768px) {
-  .register-form-container {
-    margin-top: 15%;
-  }
-
   .register-form input,
   .register-form select {
     font-size: 15px;
@@ -81,9 +78,9 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .register-form-container {
-    margin-top: 15%;
+    margin-top: 5%;
   }
 
   .register-form input,
@@ -97,10 +94,6 @@
 }
 
 @media (max-width: 1440px) {
-  .register-form-container {
-    margin-top: 15%;
-  }
-
   .register-form input,
   .register-form select {
     font-size: 16px;

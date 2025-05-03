@@ -7,45 +7,48 @@ const Navbar = () => {
   const location = useLocation();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <nav className="navbar">
-      <div className="navbar-header">
-        <h2>BloodMate</h2>
-        <button className="menu-toggle" onClick={toggleMenu}>
+      <div className="navbar-container">
+        <h2 className="logo">BloodMate</h2>
+        <button
+          className="menu-toggle"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
           ☰
         </button>
-      </div>
-
-      <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
-        <Link
-          to="/"
-          className={
-            location.pathname === "/" ? "nav-link active-link" : "nav-link"
-          }
-        >
-          Home
-        </Link>
-        <Link
-          to="/donors"
-          className={
-            location.pathname === "/donors"
-              ? "nav-link active-link"
-              : "nav-link"
-          }
-        >
-          Donors
-        </Link>
-        <Link
-          to="/register"
-          className={
-            location.pathname === "/register"
-              ? "nav-link active-link"
-              : "nav-link"
-          }
-        >
-          Register As Donor
-        </Link>
+        <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
+          <Link
+            to="/"
+            onClick={closeMenu}
+            className={`nav-link ${
+              location.pathname === "/" ? "active-link" : ""
+            }`}
+          >
+            Home
+          </Link>
+          <Link
+            to="/donors"
+            onClick={closeMenu}
+            className={`nav-link ${
+              location.pathname === "/donors" ? "active-link" : ""
+            }`}
+          >
+            Donors
+          </Link>
+          <Link
+            to="/register"
+            onClick={closeMenu}
+            className={`nav-link ${
+              location.pathname === "/register" ? "active-link" : ""
+            }`}
+          >
+            Register As Donor
+          </Link>
+        </div>
       </div>
     </nav>
   );
