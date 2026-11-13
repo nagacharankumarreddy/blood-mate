@@ -1,14 +1,13 @@
-import "./ScrollingBanner.css";
+const MESSAGE =
+  "Help us save more lives. Share BloodMate with your friends so we can reach more donors.";
 
-const ScrollingBanner = () => {
-  return (
-    <div className="scroll-banner">
-      <div className="scroll-text">
-        Help us save more lives! Share BloodMate with your friends so we can
-        connect with more donors. ❤️
-      </div>
-    </div>
-  );
-};
+const ScrollingBanner = () => (
+  <aside className="banner" aria-label="Share BloodMate">
+    <p className="banner-text">
+      <span>{MESSAGE}</span>
+      <span aria-hidden="true">{MESSAGE}</span>
+    </p>
+  </aside>
+);
 
 export default ScrollingBanner;

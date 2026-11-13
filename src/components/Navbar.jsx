@@ -1,56 +1,51 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import "./Navbar.css";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+
+const LINKS = [
+  { to: "/", label: "Home", end: true },
+  { to: "/donors", label: "Find donors" },
+];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
+  const { pathname } = useLocation();
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const closeMenu = () => setMenuOpen(false);
+  // Close the mobile menu whenever the page changes.
+  useEffect(() => setMenuOpen(false), [pathname]);
 
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <h2 className="logo">BloodMate</h2>
+    <header className="nav">
+      <div className="nav-inner">
+        <Link to="/" className="brand" aria-label="BloodMate home">
+          <span className="brand-drop" aria-hidden="true" />
+          BloodMate
+        </Link>
+
         <button
-          className="menu-toggle"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
+          type="button"
+          className="nav-toggle"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="nav-links"
+          onClick={() => setMenuOpen((open) => !open)}
         >
-          ☰
+          <span />
+          <span />
+          <span />
         </button>
-        <div className={`navbar-links ${menuOpen ? "open" : ""}`}>
-          <Link
-            to="/"
-            onClick={closeMenu}
-            className={`nav-link ${
-              location.pathname === "/" ? "active-link" : ""
-            }`}
-          >
-            Home
-          </Link>
-          <Link
-            to="/donors"
-            onClick={closeMenu}
-            className={`nav-link ${
-              location.pathname === "/donors" ? "active-link" : ""
-            }`}
-          >
-            Donors
-          </Link>
-          <Link
-            to="/register"
-            onClick={closeMenu}
-            className={`nav-link ${
-              location.pathname === "/register" ? "active-link" : ""
-            }`}
-          >
-            Register As Donor
-          </Link>
-        </div>
+
+        <nav id="nav-links" className={`nav-links ${menuOpen ? "open" : ""}`} aria-label="Main">
+          {LINKS.map((link) => (
+            <NavLink key={link.to} to={link.to} end={link.end} className="nav-link">
+              {link.label}
+            </NavLink>
+          ))}
+          <NavLink to="/register" className="btn btn-light nav-cta">
+            Become a donor
+          </NavLink>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 };
 
